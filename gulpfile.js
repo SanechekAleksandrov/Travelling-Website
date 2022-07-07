@@ -1,0 +1,124 @@
+const { src, dest, watch, parallel, series} = require('gulp');
+const scss = require('gulp-sass')(require('sass'));
+const concat = require('gulp-concat');
+const autoprefixer = require('gulp-autoprefixer'); 
+const uglify = require('gulp-uglify'); 
+const imagemin = require('gulp-imagemin');
+const rename = require('gulp-rename');
+const nunjucksRender = require('gulp-nunjucks-render');
+const del = require('del');
+const browserSync = require('browser-sync').create();
+
+
+
+
+function browsersync() {
+   browserSync.init({
+      server: {
+         baseDir:'app/'
+      },
+      notify: false
+   })
+}
+
+function nunjucks(){
+   return src('app/*.njk')
+   .pipe(nunjucksRender())
+   .pipe(dest('app'))
+   .pipe(browserSync.stream())
+}
+
+function stylesMin() {
+   return src('app/scss/*.scss')
+   .pipe(scss({outputStyle: 'compressed'}))
+   .pipe(rename({
+      suffix:'.min'
+   }))
+   .pipe(autoprefixer({
+      overrideBrowserslist: ['last 10 versions'], 
+      grid:true
+   }))
+   .pipe(dest('app/css'))
+   .pipe(browserSync.stream())
+}
+
+function stylesMax(){
+   return src('app/scss/*.scss')
+   .pipe(scss())
+   .pipe(autoprefixer({
+      overrideBrowserslist: ['last 10 versions'], 
+      grid:true
+   }))
+   .pipe(dest('app/css'))
+}
+
+
+function scripts() {
+   return src([
+      'node_modules/jquery/dist/jquery.js',
+      'node_modules/slick-carousel/slick/slick.js',
+      'node_modules/@fancyapps/fancybox/dist/jquery.fancybox.js',
+      'node_modules/rateyo/src/jquery.rateyo.js',
+      'node_modules/ion-rangeslider/js/ion.rangeSlider.js',
+      'node_modules/jquery-form-styler/dist/jquery.formstyler.js',
+      'app/js/main.js'
+   ])
+   .pipe(concat('main.min.js'))
+   .pipe(uglify())
+   .pipe(dest('app/js'))
+   .pipe(browserSync.stream())
+}
+
+function images() {
+   return src('app/images/**/*.*')
+   .pipe(imagemin([
+      imagemin.gifsicle({interlaced: true}),
+	imagemin.mozjpeg({quality: 75, progressive: true}),
+	imagemin.optipng({optimizationLevel: 5}),
+	imagemin.svgo({
+		plugins: [
+			{removeViewBox: true},
+			{cleanupIDs: false}
+		]
+	})
+   ]))
+   .pipe(dest('dist/images'))
+}
+
+
+function cleandist() {
+   return del('dist')
+}
+
+function watching() {
+   watch(['app/**/*.scss'],stylesMin);
+   watch(['app/**/*.scss'],stylesMax);
+   watch(['app/*.njk'],nunjucks);
+   watch(['app/js/**/*.js', '!app/js/main.min.js'], scripts);
+   watch(['app/*.html']).on('change', browserSync.reload);
+}
+
+function build() {
+   return src([
+      'app/**/*.html',
+      'app/css/style.min.css',
+      'app/css/style.css',
+      'app/css/*.css',
+      'app/js/main.min.js',
+      'app/js/main.js'
+   ], {base:'app'})
+   .pipe(dest('dist'))
+}
+
+
+exports.stylesMin = stylesMin;
+exports.stylesMax = stylesMax;
+exports.scripts = scripts;
+exports.browsersync = browsersync;
+exports.watching = watching;
+exports.images = images; 
+exports.nunjucks = nunjucks; 
+exports.cleandist = cleandist; 
+exports.build = series(cleandist, images, build);
+exports.default = parallel(nunjucks, stylesMin, stylesMax, scripts, browsersync, watching); 
+
