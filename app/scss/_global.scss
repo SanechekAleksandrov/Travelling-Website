@@ -4,6 +4,10 @@ body {
 }
 
 body {
+   font-size: 18px;
+   line-height: 22px;
+   @extend %M-400;
+   color:$black;
    display: flex;
    flex-direction: column;
 }
@@ -13,7 +17,7 @@ body {
 }
 
 .container {
-   max-width: 1200px;
+   max-width: 1230px;
    margin: 0 auto;
    padding: 0 15px;
 }

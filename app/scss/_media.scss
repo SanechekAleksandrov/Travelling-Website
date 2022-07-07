@@ -1,0 +1,13 @@
+@media (max-width:1100px){
+   .header{
+      &__top{
+         &-contacts{
+            display: block;
+            &-block{
+               margin-bottom: 40px;
+               margin-right: 0;
+            }
+         }
+      }
+   }
+}
