@@ -8,9 +8,14 @@ body {
   font-weight: 500;
 }
 
-.header-nav__link--active, .header-top__contacts-phone {
+.header-info__btn, .header-nav__link--active, .header-top__contacts-phone {
   font-family: "Montserrat-Bold", sans-serif;
   font-weight: 700;
+}
+
+.header-slider__title, .header-info__title {
+  font-family: "Montserrat-Black", sans-serif;
+  font-weight: 900;
 }
 
 @font-face {
@@ -141,6 +146,7 @@ body {
   line-height: 17px;
   color: #000;
   padding-top: 10px;
+  margin-bottom: 150px;
 }
 .header-logo__img {
   -o-object-fit: contain;
@@ -148,7 +154,8 @@ body {
   width: 180px;
   height: 150px;
 }
-.header__top {
+
+.header-top {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -157,7 +164,6 @@ body {
           justify-content: space-between;
   margin-bottom: 30px;
 }
-
 .header-top__contacts {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -237,6 +243,8 @@ body {
   background-color: #fff;
   padding: 15px 30px;
   border-radius: 30px;
+  -webkit-box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 10px 8px 0px rgba(0, 0, 0, 0.25);
 }
 .header-nav__link {
   font-size: 14px;
@@ -269,11 +277,52 @@ body {
   outline: none;
 }
 
+.header-main__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.header-info__title {
+  margin-bottom: 35px;
+  font-size: 38px;
+  line-height: 46px;
+}
+.header-info__subtitle {
+  margin-bottom: 50px;
+}
+.header-info__title, .header-info__subtitle {
+  width: 570px;
+  color: #fff;
+}
+.header-info__btn {
+  font-size: 20px;
+  line-height: 24px;
+  padding: 16px 38px;
+  background: #FCFF60;
+  -webkit-box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.8);
+          box-shadow: 0px 4px 20px rgba(255, 255, 255, 0.8);
+  border-radius: 10px;
+  text-align: center;
+}
+
+.header-slider__block {
+  width: 400px;
+}
+.header-slider__title {
+  font-size: 25px;
+  line-height: 30px;
+  color: #fff;
+}
+
 @media (max-width: 1100px) {
-  .header__top-contacts {
+  .header-top__contacts {
     display: block;
   }
-  .header__top-contacts-block {
+  .header-top__contacts-block {
     margin-bottom: 40px;
     margin-right: 0;
   }
