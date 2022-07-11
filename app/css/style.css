@@ -8,12 +8,12 @@ body {
   font-weight: 500;
 }
 
-.header-slider__country, .header-info__btn, .header-nav__link--active, .header-top__contacts-phone {
+.form__btn, .header-slider__country, .header-info__btn, .header-nav__link--active, .header-top__contacts-phone {
   font-family: "Montserrat-Bold", sans-serif;
   font-weight: 700;
 }
 
-.header-slider__title, .header-info__title {
+.form__title, .header-slider__title, .header-info__title {
   font-family: "Montserrat-Black", sans-serif;
   font-weight: 900;
 }
@@ -498,6 +498,77 @@ body {
   padding-bottom: 200px;
   position: relative;
   background: url(../images/form/bg-left.svg) no-repeat left top, url(../images/form/bg-right.svg) no-repeat right bottom;
+}
+
+.form {
+  background-color: #345F87;
+  border-radius: 10px;
+  position: relative;
+}
+.form::after {
+  content: "";
+  position: absolute;
+  background-image: url("../images/form/girl.png");
+  background-repeat: no-repeat;
+  right: -20px;
+  bottom: -10px;
+  width: 375px;
+  height: 375px;
+}
+.form__title {
+  color: #fff;
+  font-size: 25px;
+  line-height: 30px;
+  max-width: 570px;
+  padding-top: 30px;
+  padding-bottom: 45px;
+  margin-left: 100px;
+}
+.form__name-box, .form__phone-box {
+  position: relative;
+  display: inline;
+}
+.form__name-box::before, .form__phone-box::before {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  background-repeat: no-repeat;
+}
+.form__name-box::before {
+  background-image: url("../images/form/user-icon.svg");
+  top: -2px;
+  left: 75px;
+}
+.form__phone-box::before {
+  background-image: url("../images/form/phone.svg");
+  top: -2px;
+  left: 35px;
+}
+.form__name, .form__phone {
+  -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  outline: none;
+  padding: 10px 10px 10px 35px;
+  border: none;
+  margin-bottom: 60px;
+}
+.form__name {
+  margin-left: 70px;
+}
+.form__phone {
+  margin: 0 30px;
+}
+.form__btn {
+  background-color: #F2994A;
+  padding: 12px 27px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 15px 5px rgb(242, 153, 74);
+          box-shadow: 0px 0px 15px 5px rgb(242, 153, 74);
+  border-radius: 10px;
+  color: #fff;
 }
 
 @media (max-width: 1100px) {
