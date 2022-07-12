@@ -18,7 +18,7 @@
    @extend %M-500;
    color: $black;
    padding-top: 10px;
-   margin-bottom: 175px;
+   margin-bottom: 120px;
 
    &-logo__img {
       object-fit: contain;
@@ -282,17 +282,13 @@
 }
 
 .information{
-   padding-top: 135px;
-   padding-bottom: 200px;
-   position: relative;      
-   background: url(../images/form/bg-left.svg) no-repeat left top, 
-               url(../images/form/bg-right.svg) no-repeat right bottom;
+   padding-top: 135px; 
 }
-
 .form{
    background-color: #345F87;
    border-radius: 10px;
    position: relative;
+   margin-bottom: 70px;
    &::after{
       content:'';
       position: absolute;
@@ -361,6 +357,100 @@
       border-radius:10px;
       @extend %M-700;
       color:$white;
+   }
+}
+
+.advantages{
+   margin-bottom: 50px;
+   text-align: center;
+   &__title{
+      font-size: 25px;
+      line-height: 30px;   
+      color:$black;
+      @extend %M-900;
+      margin-bottom: 35px;
+   }
+   &__inner{
+      display: flex;
+      justify-content: space-evenly;
+      align-items: baseline;
+   }
+   &__item{
+      width:250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+   &__img{
+      margin-bottom: 8px;
+   }
+   &__name{
+      font-size: 18px;
+      @extend %M-700;
+      color:$black;
+      margin-bottom: 10px;
+   }
+}
+
+.most-popular{
+   background-image: url(../images/popular.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   padding:120px 0 80px;
+   margin-bottom: 100px;
+      &__title{
+      font-size: 50px;
+      line-height: 61px;
+      text-align: center;
+      @extend %M-900;
+      text-align: center;
+      color:$white;
+      max-width:950px;
+      margin: 0 auto;
+      }
+}
+
+.countries{
+   margin-bottom: 120px;
+
+   &__inner{
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-gap: 30px;
+   }
+   &__item{
+      width:270px;
+      height:350px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      background-repeat: no-repeat;
+   }
+   &__title{
+      font-size: 18px;
+      @extend %M-500;
+      color:$white;
+      text-align: center;
+      padding-top: 22px;
+   }
+   &__info{
+      height:40px;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+   }
+   &__price{
+      background-color: #fff;
+   }
+   &__description{
+      background-color: #84E439;
+   }
+   &__price, &__description{
+      padding:auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
    }
 }
 
