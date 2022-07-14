@@ -397,17 +397,18 @@
    background-image: url(../images/popular.jpg);
    background-repeat: no-repeat;
    background-size: cover;
+   background-position: center bottom;
    padding:120px 0 80px;
    margin-bottom: 100px;
       &__title{
       font-size: 50px;
       line-height: 61px;
-      text-align: center;
       @extend %M-900;
       text-align: center;
       color:$white;
       max-width:950px;
       margin: 0 auto;
+      text-transform: uppercase;
       }
 }
 
@@ -420,8 +421,8 @@
       grid-gap: 30px;
    }
    &__item{
-      width:300px;
-      height:400px;
+      width:250px;
+      height:350px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -435,7 +436,8 @@
       }
    }
    &__title{
-      font-size: 18px;
+      font-size: 20px;
+      line-height: 26px;
       @extend %M-500;
       color:$white;
       text-align: center;
@@ -477,6 +479,87 @@
    }
 }
 
+.our-reviews{
+   background-image: url(../images/reviews/bg.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center bottom;
+}
+
+.reviews{
+   padding-bottom: 40px;
+   &__title{
+      font-size: 50px;
+      line-height: 61px;
+      @extend %M-900;
+      text-align: center;
+      color:$white;
+      text-transform: uppercase;
+      padding: 120px 0 135px;
+      margin-bottom: 40px;
+   }
+   &__slider{
+      max-width:650px;
+      margin: 0 auto;
+      text-align: center;
+      box-shadow: 3px 6px 10px 6px rgba(0, 0, 0, 0.25);
+      margin-bottom: 40px;
+   }
+   &__slider-img{
+      margin: 0 auto;
+      width: 160px;
+      height: 160px;
+      border-radius:50%;
+      margin-bottom: 15px;
+      margin-top: 50px;
+   }
+   &__slider-author{
+      font-size: 16px;
+      line-height: 20px;
+      @extend %M-700;
+      margin-bottom: 15px;
+   }
+   &__slider-text{
+      max-width: 425px;
+      margin: 0 auto;
+      font-size: 14px;
+      line-height: 17px;
+      margin-bottom: 50px;
+   }
+   .slick-dots{
+      padding-bottom: 15px;
+   }
+   .slick-next, .slick-prev{
+      border:none;
+      background-color: transparent;
+      padding: 0;
+      cursor: pointer;
+      position: absolute;
+      top:50%;
+      transform:translateY(-50%);
+      z-index: 5;
+   }
+   .slick-prev{
+      left:35px;
+   }
+   .slick-next{
+      right:35px;
+   }
+   &__btn{
+      display: block;
+      text-align: center;
+      border:none;
+      @extend %M-700;
+      color:$white;
+      margin:0 auto;
+      background: #F2994A;
+      box-shadow: 0px 0 15px 5px rgba(0, 0, 0, 0.25);
+      padding: 17px 58px;
+      cursor: pointer;
+      z-index: 5;
+   }
+
+}
 
 
 
