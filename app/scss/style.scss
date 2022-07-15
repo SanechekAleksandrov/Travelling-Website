@@ -53,7 +53,6 @@
       }
 
       &-phone {
-         color: $black;
          font-size: 16px;
          line-height: 20px;
          @extend %M-700;
@@ -62,6 +61,7 @@
       &-place,
       &-time,
       &-phone {
+         color:$white;
          width: 230px;
          padding-left: 50px;
          position: relative;
@@ -558,6 +558,85 @@
       cursor: pointer;
       z-index: 5;
    }
+
+}
+
+.footer{
+   background-image: url(../images/footer/bg.jpg);
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center top;
+   &__nav{
+      height:60px;
+      width:100%;
+      background-color: #FCFF60;
+      display: flex;
+      align-items: center;
+   }
+   &__menu{
+      display: flex;
+      justify-content: space-between;
+      gap:100px;
+   }
+   &__item-link{
+      transition: all .3s;
+      &:hover{
+         border-bottom:1px solid $black;
+      }
+   }
+   &__item-link--active{
+      @extend %M-700;
+   }
+   &__bottom{
+      padding:50px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   &__contacts{
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 25px;
+   }
+   .contacts-place{
+      width:280px;
+      margin-bottom: 0;
+   }
+   &__social{
+      display: flex;
+      flex-direction: column;
+   }
+   &__social-email{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   &__social-email-img{
+      margin-right: 15px;
+   }
+   &__social-email-link{
+      text-decoration: underline;
+      @extend %M-700;
+   }
+   &__social-media{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+   &__rights{
+      color:$white;
+      text-align: right;
+   }
+   &__rights-btn{
+      margin-top: 30px;
+      border-radius:15px;
+      padding:15px;
+      border:none;
+      cursor: pointer;
+   }
+
 
 }
 
