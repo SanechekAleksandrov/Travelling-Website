@@ -28,6 +28,10 @@ $(function () {
         $('body,html').animate({scrollTop: top}, 1000);
       });
 
+  $('.header-top__btn').on('click', function(){
+    $('.header-nav').toggleClass('header-nav--active');
+  });
+
 
   
 
