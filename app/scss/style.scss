@@ -14,7 +14,7 @@
    margin-bottom: 120px;
 
    &__inner {
-      min-height: 100vh;
+      min-height:100vh;
       background-image: url('../images/1.jpg');
       background-repeat: no-repeat;
       background-size: cover;
@@ -186,7 +186,7 @@
 
    &__title,
    &__subtitle {
-      width: 570px;
+      max-width: 570px;
       color: $white;
    }
 
