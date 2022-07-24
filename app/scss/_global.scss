@@ -8,8 +8,6 @@ body {
    line-height: 22px;
    @extend %M-400;
    color:$black;
-   display: flex;
-   flex-direction: column;
 }
 
 .main {

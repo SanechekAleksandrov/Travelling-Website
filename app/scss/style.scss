@@ -18,7 +18,7 @@
       background-image: url('../images/1.jpg');
       background-repeat: no-repeat;
       background-size: cover;
-      background-position: top center;
+      background-position:top center;
    }
    &-logo__img {
       object-fit: contain;
@@ -112,6 +112,7 @@
 
 .header-nav {
    width: 100%;
+   z-index: 10;
 
    &__menu {
       width: 100%;
@@ -208,7 +209,8 @@
 
 .header-slider {
    max-width: 350px;
-   margin-top: 175px;
+   margin-top: 300px;
+   z-index: 1;
 
    &__inner {
       max-width: 300px;
@@ -283,6 +285,7 @@
    display: flex;
    justify-content: center;
    align-items: center;
+   margin-bottom: 40px;
 
    li {
       margin: 0 8px;
@@ -315,7 +318,15 @@
    border-radius: 10px;
    position: relative;
    margin-bottom: 70px;
-
+   padding:0 25px 35px 70px;
+   &__section{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   &__wrapper{
+      margin-right: 30px;
+   }
    &::after {
       content: '';
       position: absolute;
@@ -343,6 +354,8 @@
    &__phone-box {
       position: relative;
       display: inline;
+      width: 100%;
+      height: 100%;
 
       &::before {
          content: '';
@@ -357,15 +370,14 @@
       &::before {
          background-image: url('../images/form/user-icon.svg');
          top: -2px;
-         left: 75px;
+         left: 7px;
       }
    }
-
    &__phone-box {
       &::before {
          background-image: url('../images/form/phone.svg');
          top: -2px;
-         left: 35px;
+         left: 7px;
       }
    }
 
@@ -375,18 +387,13 @@
       outline: none;
       padding: 10px 10px 10px 35px;
       border: none;
-      margin-bottom: 60px;
    }
-
-   &__name {
-      margin-left: 70px;
-   }
-
-   &__phone {
-      margin: 0 30px;
+   &__name{
+      margin-right: 25px;
    }
 
    &__btn {
+      margin-right:auto;
       background-color: #F2994A;
       padding: 12px 27px;
       border: none;
@@ -449,6 +456,7 @@
    background-position: center bottom;
    padding: 120px 0 80px;
    margin-bottom: 100px;
+   filter: drop-shadow(5px 5px 20px black);
 
    &__title {
       font-size: 50px;
@@ -459,6 +467,7 @@
       max-width: 950px;
       margin: 0 auto;
       text-transform: uppercase;
+      backdrop-filter: brightness(0.8);
    }
 }
 
@@ -548,6 +557,7 @@
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center bottom;
+   filter: drop-shadow(5px 5px 20px black);
 }
 
 .reviews {
@@ -562,6 +572,7 @@
       text-transform: uppercase;
       padding: 120px 0 135px;
       margin-bottom: 40px;
+      backdrop-filter: brightness(0.8);
    }
 
    &__slider {
@@ -647,37 +658,12 @@
    background-size: cover;
    background-position: center top;
 
-   &__nav {
-      height: 60px;
-      width: 100%;
-      background-color: #FCFF60;
-      display: flex;
-      align-items: center;
-   }
-
-   &__menu {
-      display: flex;
-      justify-content: space-between;
-      gap: 100px;
-   }
-
-   &__item-link {
-      transition: all .2s;
-      border-bottom: 1px solid transparent;
-      &:hover {
-         border-bottom: 1px solid $black;
-      }
-   }
-
-   &__item-link--active {
-      @extend %M-700;
-   }
-
    &__bottom {
       padding: 50px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      backdrop-filter: brightness(0.7);
    }
 
    &__contacts {
@@ -690,7 +676,10 @@
 
    .contacts-place {
       width: 280px;
-      margin-bottom: 0;
+      margin-bottom: 30px;
+   }
+   .contacts-phone{
+      margin-bottom: 15px;
    }
 
    &__social {
@@ -709,6 +698,7 @@
    }
 
    &__social-email-link {
+      color:$white;
       text-decoration: underline;
       @extend %M-700;
    }

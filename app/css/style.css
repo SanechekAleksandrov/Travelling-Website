@@ -8,7 +8,7 @@ body {
   font-weight: 500;
 }
 
-.footer__social-email-link, .footer__item-link--active, .reviews__btn, .reviews__slider-author, .countries__price, .advantages__name, .form__btn, .header-slider__country, .header-info__btn, .header-nav__link--active, .header-top__contacts-phone {
+.footer__social-email-link, .reviews__btn, .reviews__slider-author, .countries__price, .advantages__name, .form__btn, .header-slider__country, .header-info__btn, .header-nav__link--active, .header-top__contacts-phone {
   font-family: "Montserrat-Bold", sans-serif;
   font-weight: 700;
 }
@@ -203,13 +203,6 @@ body {
   font-size: 18px;
   line-height: 22px;
   color: #000;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 .main {
@@ -331,6 +324,7 @@ body {
 
 .header-nav {
   width: 100%;
+  z-index: 10;
 }
 .header-nav__menu {
   width: 100%;
@@ -425,7 +419,8 @@ body {
 
 .header-slider {
   max-width: 350px;
-  margin-top: 175px;
+  margin-top: 300px;
+  z-index: 1;
 }
 .header-slider__inner {
   max-width: 300px;
@@ -502,6 +497,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  margin-bottom: 40px;
 }
 .slick-dots li {
   margin: 0 8px;
@@ -529,6 +525,21 @@ body {
   border-radius: 10px;
   position: relative;
   margin-bottom: 70px;
+  padding: 0 25px 35px 70px;
+}
+.form__section {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.form__wrapper {
+  margin-right: 30px;
 }
 .form::after {
   content: "";
@@ -553,6 +564,8 @@ body {
 .form__name-box, .form__phone-box {
   position: relative;
   display: inline;
+  width: 100%;
+  height: 100%;
 }
 .form__name-box::before, .form__phone-box::before {
   content: "";
@@ -564,12 +577,12 @@ body {
 .form__name-box::before {
   background-image: url("../images/form/user-icon.svg");
   top: -2px;
-  left: 75px;
+  left: 7px;
 }
 .form__phone-box::before {
   background-image: url("../images/form/phone.svg");
   top: -2px;
-  left: 35px;
+  left: 7px;
 }
 .form__name, .form__phone {
   -webkit-box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -577,15 +590,12 @@ body {
   outline: none;
   padding: 10px 10px 10px 35px;
   border: none;
-  margin-bottom: 60px;
 }
 .form__name {
-  margin-left: 70px;
-}
-.form__phone {
-  margin: 0 30px;
+  margin-right: 25px;
 }
 .form__btn {
+  margin-right: auto;
   background-color: #F2994A;
   padding: 12px 27px;
   border: none;
@@ -658,6 +668,8 @@ body {
   background-position: center bottom;
   padding: 120px 0 80px;
   margin-bottom: 100px;
+  -webkit-filter: drop-shadow(5px 5px 20px black);
+          filter: drop-shadow(5px 5px 20px black);
 }
 .most-popular__title {
   font-size: 50px;
@@ -667,6 +679,8 @@ body {
   max-width: 950px;
   margin: 0 auto;
   text-transform: uppercase;
+  -webkit-backdrop-filter: brightness(0.8);
+          backdrop-filter: brightness(0.8);
 }
 
 .countries {
@@ -770,6 +784,8 @@ body {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center bottom;
+  -webkit-filter: drop-shadow(5px 5px 20px black);
+          filter: drop-shadow(5px 5px 20px black);
 }
 
 .reviews {
@@ -783,6 +799,8 @@ body {
   text-transform: uppercase;
   padding: 120px 0 135px;
   margin-bottom: 40px;
+  -webkit-backdrop-filter: brightness(0.8);
+          backdrop-filter: brightness(0.8);
 }
 .reviews__slider {
   max-width: 650px;
@@ -862,35 +880,6 @@ body {
   background-size: cover;
   background-position: center top;
 }
-.footer__nav {
-  height: 60px;
-  width: 100%;
-  background-color: #FCFF60;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-.footer__menu {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  gap: 100px;
-}
-.footer__item-link {
-  -webkit-transition: all 0.2s;
-  -o-transition: all 0.2s;
-  transition: all 0.2s;
-  border-bottom: 1px solid transparent;
-}
-.footer__item-link:hover {
-  border-bottom: 1px solid #000;
-}
 .footer__bottom {
   padding: 50px 20px;
   display: -webkit-box;
@@ -902,6 +891,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-backdrop-filter: brightness(0.7);
+          backdrop-filter: brightness(0.7);
 }
 .footer__contacts {
   display: -webkit-box;
@@ -921,7 +912,10 @@ body {
 }
 .footer .contacts-place {
   width: 280px;
-  margin-bottom: 0;
+  margin-bottom: 30px;
+}
+.footer .contacts-phone {
+  margin-bottom: 15px;
 }
 .footer__social {
   display: -webkit-box;
@@ -947,6 +941,7 @@ body {
   margin-right: 15px;
 }
 .footer__social-email-link {
+  color: #fff;
   text-decoration: underline;
 }
 .footer__social-media {
@@ -972,6 +967,22 @@ body {
   cursor: pointer;
 }
 
+@media (max-width: 1260px) {
+  .form::after {
+    display: none;
+  }
+  .form__title {
+    margin: 0 auto;
+  }
+  .form__wrapper {
+    margin: 0 auto;
+  }
+  .countries__inner {
+    -ms-grid-columns: (1fr)[3];
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+  }
+}
 @media (max-width: 960px) {
   .header-top {
     -webkit-box-pack: start;
@@ -1058,6 +1069,33 @@ body {
   .header {
     margin-bottom: -300px;
   }
+  .form__name, .form__phone {
+    display: block;
+  }
+  .form__name {
+    margin-bottom: 25px;
+  }
+  .form__name-box::before, .form__phone-box::before {
+    top: 7px;
+    left: 7px;
+  }
+  .form__name-box {
+    margin-bottom: 25px;
+  }
+  .countries__inner {
+    -ms-grid-columns: (1fr)[2];
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 900px) {
+  .footer__bottom {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  .footer__rights {
+    margin-top: 50px;
+    margin-left: auto;
+  }
 }
 @media (max-width: 800px) {
   .header-main__wrapper {
@@ -1067,10 +1105,10 @@ body {
   .header-slider {
     margin-left: auto;
   }
-}
-@media (max-width: 600px) {
-  .header-slider {
-    margin-top: 100px;
+  .reviews__title {
+    font-size: 40px;
+    line-height: 50px;
+    padding: 90px 10px;
   }
 }
 @media (max-width: 680px) {
@@ -1083,6 +1121,46 @@ body {
   }
   .header-top__contacts-place, .header-top__contacts-time {
     margin-bottom: 25px;
+  }
+  .footer .contacts-time {
+    margin-bottom: 15px;
+  }
+  .form {
+    padding: 0 40px 30px;
+  }
+  .form__section {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .form__name {
+    margin-right: 0;
+  }
+  .form__phone {
+    margin-bottom: 25px;
+  }
+  .form__btn {
+    margin-right: 0;
+  }
+}
+@media (max-width: 600px) {
+  .header-slider {
+    margin-top: 100px;
+  }
+  .advantages__inner {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 30px;
+  }
+  .countries__inner {
+    -ms-grid-columns: (1fr)[1];
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 @media (max-width: 530px) {
@@ -1112,5 +1190,35 @@ body {
   }
   .header-info__btn {
     display: inline-block;
+  }
+  .footer .contacts-place {
+    margin-bottom: 100px;
+  }
+}
+@media (max-width: 450px) {
+  .most-popular {
+    padding: 40px 0;
+    margin-bottom: 60px;
+  }
+  .most-popular__title {
+    font-size: 30px;
+    line-height: 40px;
+  }
+  .reviews__slider-text {
+    padding: 0 15px;
+  }
+  .reviews .slick-next {
+    right: 15px;
+  }
+  .reviews .slick-prev {
+    left: 15px;
+  }
+}
+@media (max-width: 400px) {
+  .form {
+    padding: 0 20px 25px;
+  }
+  .form__name, .form__phone {
+    width: inherit;
   }
 }
